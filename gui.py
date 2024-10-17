@@ -15,10 +15,10 @@ class MainWindow:
         self.button = ttk.Button(self.main_frame, text="select")
         self.button["command"] = self.FileOpener
         self.button.grid(row=0, column=0, padx=5, pady=5, sticky="w")
-        ttk.Label(self.main_frame, text="select file you want to convert from png to pdf").grid(row=0, column=2, columnspan=2, padx=5, pady=5, sticky="w")
+        ttk.Label(self.main_frame, text="picture to pdf").grid(row=0, column=2, columnspan=2, padx=5, pady=5, sticky="w")
 
     def FileOpener(self):
-        file_type = [("image type", ".png")]
+        file_type = [("image type", ".png"), ("image type", ".jpg")]
         directory_path = os.path.abspath(os.path.dirname(__file__))
         self.selected_file_path = tkinter.filedialog.askopenfilename(filetypes=file_type, initialdir=directory_path)
         Converter(self.selected_file_path).img_to_pdf()
